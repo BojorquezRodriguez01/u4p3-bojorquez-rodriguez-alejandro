@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.test import Client, TestCase
 from django.urls import reverse
 
 from .models import Servicio
@@ -141,15 +141,21 @@ class ServicioOwnershipTests(TestCase):
         self.assertTrue(Servicio.objects.filter(pk=self.servicio.pk).exists())
 
     def test_owner_can_create_edit_and_delete_service(self):
-        self.client.force_login(self.owner)
+        client = Client(enforce_csrf_checks=True)
+        client.force_login(self.owner)
 
-        create_response = self.client.post(
+        create_form = client.get(reverse('crear_servicio'))
+        self.assertEqual(create_form.status_code, 200)
+        csrf_token = client.cookies['csrftoken'].value
+
+        create_response = client.post(
             reverse('crear_servicio'),
             {
                 'titulo': 'Nuevo servicio',
                 'descripcion': 'Descripción de prueba',
                 'precio': '75.00',
                 'categoria': 'Prueba',
+                'csrfmiddlewaretoken': csrf_token,
             },
         )
         self.assertRedirects(create_response, reverse('servicios'))
@@ -157,21 +163,33 @@ class ServicioOwnershipTests(TestCase):
         created_service = Servicio.objects.get(titulo='Nuevo servicio')
         self.assertEqual(created_service.propietario, self.owner)
 
-        edit_response = self.client.post(
+        edit_form = client.get(
+            reverse('editar_servicio', args=[self.servicio.pk])
+        )
+        self.assertEqual(edit_form.status_code, 200)
+        csrf_token = client.cookies['csrftoken'].value
+        edit_response = client.post(
             reverse('editar_servicio', args=[self.servicio.pk]),
             {
                 'titulo': 'Servicio actualizado',
                 'descripcion': 'Descripción actualizada',
                 'precio': '60.00',
                 'categoria': 'Actualizada',
+                'csrfmiddlewaretoken': csrf_token,
             },
         )
         self.assertRedirects(edit_response, reverse('servicios'))
         self.servicio.refresh_from_db()
         self.assertEqual(self.servicio.titulo, 'Servicio actualizado')
 
-        delete_response = self.client.post(
+        delete_form = client.get(
             reverse('eliminar_servicio', args=[self.servicio.pk])
+        )
+        self.assertEqual(delete_form.status_code, 200)
+        csrf_token = client.cookies['csrftoken'].value
+        delete_response = client.post(
+            reverse('eliminar_servicio', args=[self.servicio.pk]),
+            {'csrfmiddlewaretoken': csrf_token},
         )
         self.assertRedirects(delete_response, reverse('servicios'))
         self.assertFalse(Servicio.objects.filter(pk=self.servicio.pk).exists())
