@@ -1,0 +1,8 @@
+asgiref==3.12.1
+brotli==1.2.0
+Django==6.1.1
+gunicorn==26.2.0
+PyMySQL==1.2.3
+python-decouple==3.8
+sqlparse==0.6.0
+whitenoise==6.12.0

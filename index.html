@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bojorquez Rodriguez Alejandro · Portafolio</title>
+  <meta name="description" content="Portafolio de Bojorquez Rodriguez Alejandro — Aplicaciones Web, Django + MySQL + Tailwind + Render.">
+  <link rel="icon" href="data:,">
+
+  <!-- CDN de Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81'},
+            ink: '#0f172a'
+          },
+          fontFamily: {
+            sans: ['Inter','ui-sans-serif','system-ui','sans-serif'],
+            mono: ['"JetBrains Mono"','ui-monospace','SFMono-Regular','monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fuentes de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+    code, .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  </style>
+</head>
+<body class="bg-slate-50 text-ink antialiased">
+
+  <!-- ===================== NAV ===================== -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#inicio" class="flex items-center">
+          <img src="logo.png" alt="Logotipo" class="h-8 w-auto">
+        </a>
+        <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-600">
+          <a href="#sobre-mi" class="hover:text-brand-700">Sobre mí</a>
+          <a href="#stack" class="hover:text-brand-700">Stack</a>
+          <a href="#proyecto" class="hover:text-brand-700">Proyecto</a>
+          <a href="#entregas" class="hover:text-brand-700">Entregas</a>
+          <a href="#contacto" class="hover:text-brand-700">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== SECCIÓN INICIO ===================== -->
+  <section id="inicio" class="relative overflow-hidden bg-ink">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-900 via-ink to-slate-900"></div>
+    <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-brand-600/30 blur-3xl"></div>
+    
+    <div id="datos-alumno" class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+
+        <img src="WhatsApp Image 2026-09-28 at 10.50.40 AM.jpeg" alt="Foto de Bojorquez Rodriguez Alejandro" class="h-28 w-28 rounded-full object-cover flex-none border-2 border-white/20">
+
+        <div class="text-center sm:text-left">
+          <p class="text-brand-300 text-xs font-semibold uppercase tracking-wide">Portafolio · Aplicaciones Web</p>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Bojorquez Rodriguez Alejandro</h1>
+          <p class="text-slate-300 mt-2">Matrícula: <span class="text-white font-semibold">25311046</span> · Grupo: <span class="text-white font-semibold">DSM4-2</span></p>
+          <p class="mt-4 text-slate-300 max-w-xl">Me interesa el desarrollo web full-stack, especialmente conectar la lógica del backend con interfaces limpias. Me gusta crear aplicaciones funcionales que solucionen problemas reales mediante el uso de bases de datos y frameworks modernos.</p>
+
+          <div class="mt-6 flex flex-wrap justify-center sm:justify-start gap-3">
+            <a href="https://github.com/BojorquezRodriguez01" target="_blank" rel="noopener" class="rounded-lg bg-white text-ink font-semibold px-4 py-2 text-sm hover:bg-slate-100 transition">GitHub</a>
+            <a href="https://www.linkedin.com/in/alejandro-bojorquez-8937b3340" target="_blank" rel="noopener" class="rounded-lg bg-white/10 text-white font-semibold px-4 py-2 text-sm border border-white/20 hover:bg-white/20 transition">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECCIÓN ENTREGAS ===================== -->
+  <section id="entregas" class="py-16 bg-[#0b0f19] text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- UNIDAD 1 -->
+        <div class="bg-[#111625] border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-amber-500 text-xs font-bold uppercase tracking-wider">UNIDAD 1</span>
+            <h3 class="text-xl font-bold text-white mt-1">Portafolio estático (HTML + Tailwind)</h3>
+            <hr class="border-slate-800 my-4">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">PRÁCTICAS:</p>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">Práctica 1</span>
+                <div class="flex gap-4">
+                  <a href="#" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition">ver en render</a>
+                  <a href="#" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition">ver en github</a>
+                </div>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">Práctica 2</span>
+                <div class="flex gap-4">
+                  <a href="#" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition">ver en render</a>
+                  <a href="#" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition">ver en github</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- UNIDAD 2 -->
+        <div class="bg-[#111625] border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider">UNIDAD 2</span>
+            <h3 class="text-xl font-bold text-white mt-1">App Django + MySQL en Render</h3>
+            <hr class="border-slate-800 my-4">
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">PRÁCTICAS:</p>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">Práctica 1</span>
+                <a href="#" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition">ver en github</a>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-slate-300">Práctica 2</span>
+                <a href="#" target="_blank" rel="noopener" class="text-indigo-400 hover:text-indigo-300 transition">ver imagen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <!-- UNIDAD 3 -->
+<div class="bg-[#111625] border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between min-h-[180px]">
+  <div>
+    <span class="text-indigo-400 text-xs font-bold uppercase tracking-wider">UNIDAD 3</span>
+    <h3 class="text-xl font-bold text-white mt-1">CRUD dinámico con login y sesiones</h3>
+    <hr class="border-slate-800 my-4">
+  </div>
+  <div>
+    <a href="https://miproyecto-django-braa.onrender.com/servicios/" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium text-sm gap-1 transition">
+      Ver Unidad 3 &rarr;
+    </a>
+  </div>
+</div>
+
+        <!-- UNIDAD 4 -->
+        <div class="bg-[#111625] border border-slate-800/80 rounded-xl p-6 flex flex-col justify-between min-h-[180px]">
+          <div>
+            <span class="text-purple-400 text-xs font-bold uppercase tracking-wider">UNIDAD 4</span>
+            <h3 class="text-xl font-bold text-white mt-1">Proyecto integrador final</h3>
+            <hr class="border-slate-800 my-4">
+          </div>
+          <div>
+            <a href="#" class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium text-sm gap-1 transition">
+              Ver Unidad 4 &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
