@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
+from django.core.paginator import Paginator
+from django.db.models import Q
 from .models import Servicio
 from .forms import ServicioForm
 
@@ -20,8 +22,23 @@ def inicio(request):
 # Listado filtrado solo por el usuario actual
 @login_required
 def servicios(request):
+    consulta = request.GET.get('q', '').strip()
     lista_servicios = Servicio.objects.filter(propietario=request.user)
-    return render(request, 'core/servicios.html', {'servicios': lista_servicios})
+    if consulta:
+        lista_servicios = lista_servicios.filter(
+            Q(titulo__icontains=consulta)
+            | Q(descripcion__icontains=consulta)
+            | Q(categoria__icontains=consulta)
+        )
+
+    page_obj = Paginator(lista_servicios.order_by('id'), 10).get_page(
+        request.GET.get('page')
+    )
+    return render(request, 'core/servicios.html', {
+        'servicios': page_obj,
+        'page_obj': page_obj,
+        'consulta': consulta,
+    })
 
 # Crear un nuevo servicio asignando automáticamente el propietario
 @login_required

@@ -1,6 +1,7 @@
 from pathlib import Path
 import pymysql
 from decouple import config, Csv
+from django.core.exceptions import ImproperlyConfigured
 
 # Permite usar PyMySQL como el driver oficial de MySQL
 pymysql.install_as_MySQLdb()
@@ -12,8 +13,26 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-# Permite el dominio de Render y cualquier otro host
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = config(
+    'ALLOWED_HOSTS',
+    default='localhost,127.0.0.1',
+    cast=Csv(),
+)
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS',
+    default='',
+    cast=Csv(),
+)
+
+if not DEBUG and ('*' in ALLOWED_HOSTS or not ALLOWED_HOSTS):
+    raise ImproperlyConfigured(
+        'Production ALLOWED_HOSTS must contain the exact application domains.'
+    )
+
+if not DEBUG and not CSRF_TRUSTED_ORIGINS:
+    raise ImproperlyConfigured(
+        'Production CSRF_TRUSTED_ORIGINS must contain the HTTPS application URL.'
+    )
 
 
 INSTALLED_APPS = [
@@ -98,3 +117,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Redirecciones de autenticación
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'servicios'
+
+if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
