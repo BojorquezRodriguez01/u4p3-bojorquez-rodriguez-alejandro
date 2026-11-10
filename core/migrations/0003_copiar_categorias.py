@@ -42,3 +42,4 @@ class Migration(migrations.Migration):
         migrations.RunPython(copiar_categorias, migrations.RunPython.noop),
     # cierra la lista de operaciones
     ]
+    
