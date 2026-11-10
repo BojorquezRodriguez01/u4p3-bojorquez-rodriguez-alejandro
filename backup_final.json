@@ -1,0 +1,291 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$BbZG6aKVuWWRktBf8mb9Ej$og1MVt3tEBELWnk01/hvjgCGLwCiZp52COrAP7/F+I4=",
+    "last_login": "2026-10-19T20:25:16.400Z",
+    "is_superuser": true,
+    "username": "alex",
+    "first_name": "",
+    "last_name": "",
+    "email": "a25211046@uthermosillo.edu.mx",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-28T03:17:31.589Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$IEbVhgd1BYt2gBL4Y5qlYG$kdkm9QryoXg1M2713RpCTwUD21vRPy7I9FmhRZwnnVo=",
+    "last_login": "2026-10-22T23:25:39.732Z",
+    "is_superuser": false,
+    "username": "usuario_a",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-19T20:26:24.304Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$NmBXwrRae87rQFv419FtlN$SOTOzhR6c8ztFqQ3A9u2J0A+Dv01BaBHYbx2qsQofjo=",
+    "last_login": "2026-10-19T20:45:22.701Z",
+    "is_superuser": false,
+    "username": "usuario_b",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-19T20:27:36.530Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 2,
+  "fields": {
+    "propietario": [
+      "alex"
+    ],
+    "titulo": "reparacion",
+    "descripcion": "limpiesa de telefono",
+    "precio": "1800.00",
+    "categoria": "moviles",
+    "creado_en": "2026-10-13T16:23:24.367Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 3,
+  "fields": {
+    "propietario": [
+      "alex"
+    ],
+    "titulo": "venta",
+    "descripcion": "todo lo que tenga que ver con ropa",
+    "precio": "800.00",
+    "categoria": "ropa",
+    "creado_en": "2026-10-13T16:23:54.736Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 4,
+  "fields": {
+    "propietario": [
+      "alex"
+    ],
+    "titulo": "eldaniel",
+    "descripcion": "es de color rojo",
+    "precio": "100.00",
+    "categoria": "gamer",
+    "creado_en": "2026-10-13T17:23:25.152Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 5,
+  "fields": {
+    "propietario": [
+      "alex"
+    ],
+    "titulo": "elalexis",
+    "descripcion": "no puede subirlo a render",
+    "precio": "50.00",
+    "categoria": "gamer",
+    "creado_en": "2026-10-13T17:23:51.161Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 7,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "lavado de ropa",
+    "descripcion": "limpio",
+    "precio": "800.00",
+    "categoria": "limpieza",
+    "creado_en": "2026-10-19T20:26:48.879Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 9,
+  "fields": {
+    "propietario": [
+      "usuario_b"
+    ],
+    "titulo": "lavado de ropa",
+    "descripcion": "holaaa señor",
+    "precio": "800.00",
+    "categoria": "asdad",
+    "creado_en": "2026-10-19T20:27:57.486Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 10,
+  "fields": {
+    "propietario": [
+      "usuario_b"
+    ],
+    "titulo": "carro",
+    "descripcion": "asdasdsa",
+    "precio": "600.00",
+    "categoria": "limpieza1",
+    "creado_en": "2026-10-19T20:28:10.440Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 11,
+  "fields": {
+    "propietario": [
+      "usuario_b"
+    ],
+    "titulo": "este solo saldra en el usuario b",
+    "descripcion": "salir en el b",
+    "precio": "600.00",
+    "categoria": "este solo saldra en usuario b",
+    "creado_en": "2026-10-19T20:51:33.480Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 12,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "tamales",
+    "descripcion": "tamales",
+    "precio": "12.00",
+    "categoria": "comida",
+    "creado_en": "2026-10-20T15:50:23.471Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 13,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "telefono",
+    "descripcion": "telefono",
+    "precio": "1800.00",
+    "categoria": "tecnologia",
+    "creado_en": "2026-10-20T15:50:47.662Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 14,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "pc mac",
+    "descripcion": "tecnologia",
+    "precio": "800.00",
+    "categoria": "pc gamer",
+    "creado_en": "2026-10-20T15:51:29.121Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 15,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "tenis",
+    "descripcion": "tenis",
+    "precio": "1600.00",
+    "categoria": "moda",
+    "creado_en": "2026-10-20T15:51:56.132Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 16,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "motor",
+    "descripcion": "piezas",
+    "precio": "300.00",
+    "categoria": "remplazar",
+    "creado_en": "2026-10-20T15:52:20.112Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 17,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "motor",
+    "descripcion": "piezas",
+    "precio": "300.00",
+    "categoria": "remplazar",
+    "creado_en": "2026-10-20T15:52:22.093Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 18,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "pintura",
+    "descripcion": "casa",
+    "precio": "200.00",
+    "categoria": "belleza",
+    "creado_en": "2026-10-20T15:52:55.264Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 19,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "base",
+    "descripcion": "asasd",
+    "precio": "800.00",
+    "categoria": "asda",
+    "creado_en": "2026-10-20T15:53:18.936Z"
+  }
+},
+{
+  "model": "core.servicio",
+  "pk": 20,
+  "fields": {
+    "propietario": [
+      "usuario_a"
+    ],
+    "titulo": "asd",
+    "descripcion": "asd",
+    "precio": "8000.00",
+    "categoria": "asd",
+    "creado_en": "2026-10-20T16:13:58.562Z"
+  }
+}
+]
