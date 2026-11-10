@@ -24,6 +24,7 @@ def inicio(request):
 def servicios(request):
     consulta = request.GET.get('q', '').strip()
     lista_servicios = Servicio.objects.filter(propietario=request.user)
+    print(f"Total de servicios encontrados: {lista_servicios.count()}")
     if consulta:
         lista_servicios = lista_servicios.filter(
             Q(titulo__icontains=consulta)
@@ -31,7 +32,7 @@ def servicios(request):
             | Q(categoria__icontains=consulta)
         )
 
-    page_obj = Paginator(lista_servicios.order_by('id'), 10).get_page(
+    page_obj = Paginator(lista_servicios.order_by('id'), 5).get_page(
         request.GET.get('page')
     )
     return render(request, 'core/servicios.html', {
